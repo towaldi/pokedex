@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Reset all
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-grey-1);
+}
+
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+.header {
+    /* Positioning */
+    position: sticky;
+    left: 0;
+    top: 0;
+    right: 0;
+    /* Display & box model */
+    padding: 16px 32px;
+    /* Other*/
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-outline);
+}
+
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.row-space-between {
+    /* Display & box model */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
