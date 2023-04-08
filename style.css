@@ -28,6 +28,19 @@ body {
     border-bottom: 1px solid var(--color-outline);
 }
 
+.error-message {
+    /* Display & box model */
+    padding: 48px 56px;
+}
+
+.pokemon-card {
+    /* Display & box model */
+    height: 260px;
+    width: 300px;
+    /* Other */
+    background-color: var(--color-text-grey-1);
+}
+
 
 /* ==========================================================================
    Layout

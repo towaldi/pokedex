@@ -8,4 +8,8 @@
     --color-grey-1: rgba(0, 0, 0, 0.08);
     /* Outline */
     --color-outline: rgba(0, 0, 0, 0.16);
+    /* Text */
+    --color-text-grey-1: rgba(0, 0, 0, 0.38);
+    --color-text-grey-2: rgba(0, 0, 0, 0.6);
+    --color-text-grey-3: rgba(0, 0, 0, 0.87);
 }
