@@ -9,13 +9,13 @@ h1, h2, h3, h4, h5, h6, p {
 h5 {
     font-size: 16px;
     font-weight: 700;
-    color: var(--color-text-grey-3);
+    color: var(--color-text-white-3);
 }
 
 p {
     font-size: 14px;
     font-weight: 400;
-    color: var(--color-text-grey-2);
+    color: var(--color-text-white-3);
 }
 
 /* Implementation

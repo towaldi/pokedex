@@ -6,10 +6,39 @@
     --color-white: rgba(255, 255, 255, 1);
     /* Background */
     --color-grey-1: rgba(0, 0, 0, 0.08);
+    --color-white-1: rgba(255, 255, 255, 0.38);
     /* Outline */
     --color-outline: rgba(0, 0, 0, 0.16);
+    /* Opacity */
+    --color-white-opacity-1: rgba(255, 255, 255, 0.08);
     /* Text */
     --color-text-grey-1: rgba(0, 0, 0, 0.38);
     --color-text-grey-2: rgba(0, 0, 0, 0.6);
     --color-text-grey-3: rgba(0, 0, 0, 0.87);
+    --color-text-white-1: rgba(255, 255, 255, 0.38);
+    --color-text-white-2: rgba(255, 255, 255, 0.6);
+    --color-text-white-3: rgba(255, 255, 255, 0.87);
+}
+
+
+/* Background colors
+   ========================================================================== */
+.bug {
+    background-color: rgb(103, 123, 68);
+}
+
+.fire {
+    background-color: rgb(221, 83, 83);
+}
+
+.grass {
+    background-color: rgb(88, 152, 89);
+}
+
+.normal {
+    background-color: rgb(126, 126, 126);
+}
+
+.water {
+    background-color: rgb(83, 150, 221);
 }

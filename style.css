@@ -54,6 +54,14 @@ body {
     border-radius: 8px;
 }
 
+.p-c-type-chip {
+    /* Display & box model */
+    padding: 8px;
+    /* Other */
+    background-color: var(--color-white-1);
+    border-radius: 16px;
+}
+
 .p-c-image {
     /* Display & box model */
     height: 120px;
@@ -65,6 +73,30 @@ body {
 /* ==========================================================================
    Layout
    ========================================================================== */
+.column-flex-end {
+    /* Display & box model */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.column-space-between {
+    /* Display & box model */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.column-gap-8px {
+    /* Display & box model */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
 .row-space-between {
     /* Display & box model */
     display: flex;
@@ -72,4 +104,14 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+.row-space-between-bottom {
+    /* Display & box model */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
 

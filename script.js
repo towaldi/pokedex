@@ -24,7 +24,9 @@ function renderPokemons(currentPokemon) {
         pokemonCards.innerHTML += templatePokeApiNotLoaded();   // Error case -> loading from API failed
     } else {
         for (let i = 0; i < currentPokemon.length; i++) {   // Iteration -> render all pokemon cards inside array `allPokemons`
-            pokemonCards.innerHTML += templateRenderPokemonCard(i, currentPokemon)
+            pokemonCards.innerHTML += templateRenderPokemonCard(i, currentPokemon);
+            renderPokemonTypes(i, currentPokemon);
+            renderBgrColor(i, currentPokemon);
         }
     }
 }
@@ -32,10 +34,19 @@ function renderPokemons(currentPokemon) {
 
 // Render pokemon types
 function renderPokemonTypes(i, currentPokemon) {
-    let types = document.getElementById('pokemon-types${i}');   // Select `pokemon-types` at position `i` to render the 1 or 2 types
+    let types = document.getElementById(`pokemon-types-${i}`);   // Select `pokemon-types` at position `i` to render the 1 or 2 types
     let pokemon = currentPokemon[i];    // `currentPokemon` at position `i` in array is assigned to the variable `pokemon`
-    for (let i = 0; i < pokemon.length; i++) {     // Iteration through the array `pokemon`
-        const type = pokemon['types'][i]['type']['name'];
-        types.innerHTML += ``;
+    for (let i = 0; i < pokemon['types'].length; i++) {     // Iteration through the array `pokemon`
+        const type = pokemon['types'][i]['type']['name'];   // 
+        types.innerHTML += /*html*/ `   <div class="">
+                                            <p class="p-c-type-chip">${type}</p>
+                                        </div>`;
     }
+}
+
+
+// Render pokemon card background color 
+function renderBgrColor(i, currentPokemon) {
+    let bgrColor = currentPokemon[i]['types'][0]['type']['name'];   // 
+    document.getElementById(`pokemon-${i}`).classList.add(bgrColor);
 }
