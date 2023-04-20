@@ -6,6 +6,7 @@
     --color-white: rgba(255, 255, 255, 1);
     /* Background */
     --color-grey-1: rgba(0, 0, 0, 0.08);
+    --color-grey-2: rgba(0, 0, 0, 0.18);
     --color-white-1: rgba(255, 255, 255, 0.38);
     /* Outline */
     --color-outline: rgba(0, 0, 0, 0.16);
@@ -27,16 +28,64 @@
     background-color: rgb(103, 123, 68);
 }
 
+.dark {
+    background-color: rgb(64, 64, 64);
+}
+
+.dragon {
+    background-color: rgb(152, 88, 105);
+}
+
+.electric {
+    background-color: rgb(229, 225, 19);
+}
+
+.fairy {
+    background-color: rgb(233, 152, 249);
+}
+
+.fighting {
+    background-color: rgb(103, 115, 68);
+}
+
 .fire {
     background-color: rgb(221, 83, 83);
+}
+
+.ghost {
+    background-color: rgb(89, 88, 152);
 }
 
 .grass {
     background-color: rgb(88, 152, 89);
 }
 
+.ground {
+    background-color: rgb(152, 88, 88);
+}
+
+.ice {
+    background-color: rgb(128, 200, 195);
+}
+
 .normal {
     background-color: rgb(126, 126, 126);
+}
+
+.poison {
+    background-color: rgb(196, 62, 200);
+}
+
+.psychic {
+    background-color: rgb(100, 32, 103);
+}
+
+.rock {
+    background-color: rgb(184, 184, 184);
+}
+
+.steel {
+    background-color: rgb(85, 82, 104);
 }
 
 .water {

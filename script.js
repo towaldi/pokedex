@@ -47,6 +47,18 @@ function renderPokemonTypes(i, currentPokemon) {
 
 // Render pokemon card background color 
 function renderBgrColor(i, currentPokemon) {
-    let bgrColor = currentPokemon[i]['types'][0]['type']['name'];   // 
-    document.getElementById(`pokemon-${i}`).classList.add(bgrColor);
+    let bgrColor = currentPokemon[i]['types'][0]['type']['name'];   // The `name` in `type`(e.g. grass) of the pokemon is assigned to the variable `bgrColor`
+    document.getElementById(`pokemon-${i}`).classList.add(bgrColor);    // .classList adds the corresponding background color to the pokemon
 }
+
+
+// Dialog pokemon card 
+function openDialogPokemonCard(i) {
+    let dialogCard = document.getElementById('dialog-card-container');
+    dialogCard.classList.remove('d-none');    // Removes css class .d-none form element
+    let currentPokemon = allPokemons[i];
+    dialogCard.innerHTML += templateDialogPokemonCard(i, currentPokemon);
+}
+
+
+// Dialog pokemon card
