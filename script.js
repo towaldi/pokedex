@@ -38,7 +38,7 @@ function renderPokemonTypes(i, currentPokemon) {
     let pokemon = currentPokemon[i];    // `currentPokemon` at position `i` in array is assigned to the variable `pokemon`
     for (let i = 0; i < pokemon['types'].length; i++) {     // Iteration through the array `pokemon`
         const type = pokemon['types'][i]['type']['name'];   // 
-        types.innerHTML += /*html*/ `   <div class="">
+        types.innerHTML += /*html*/ `   <div>
                                             <p class="p-c-type-chip">${type}</p>
                                         </div>`;
     }
@@ -52,13 +52,36 @@ function renderBgrColor(i, currentPokemon) {
 }
 
 
-// Dialog pokemon card 
+// Open dialog pokemon card 
 function openDialogPokemonCard(i) {
     let dialogCard = document.getElementById('dialog-card-container');
     dialogCard.classList.remove('d-none');    // Removes css class .d-none form element
     let currentPokemon = allPokemons[i];
-    dialogCard.innerHTML += templateDialogPokemonCard(i, currentPokemon);
+    dialogCard.innerHTML += templateDialogPokemonCard(i, currentPokemon);   // Runs `templateDialogPokemonCard()`
+
+    renderBgrColorDialogPokemonCard(i, currentPokemon);     // Runs `renderBgrColorDialogPokemonCard(i, currentPokemon);`
+    renderDialogPokemonTypes(i, currentPokemon);     // Runs `renderDialogPokemonTypes(i, currentPokemon);`
 }
 
 
-// Dialog pokemon card
+// Render pokemon types of dialog pokemon card
+function renderDialogPokemonTypes(i, currentPokemon) {
+    let types = document.getElementById(`dialog-pokemon-types-${i}`);  // Select `dialog-pokemon-types` at position `i` to render the 1 or 2 types
+    let pokemon = allPokemons[i];    // `allPokemons` at position `i` in array is assigned to the variable `pokemon`
+    for (let i = 0; i < pokemon['types'].length; i++) {     // Iteration through the array `pokemon`
+        const type = pokemon['types'][i]['type']['name'];
+        types.innerHTML += /*html*/ `   <div>
+                                            <p class="p-c-type-chip">${type}</p>
+                                        </div>`;
+    }
+}
+
+// Render background color of dialog pokemon card
+function renderBgrColorDialogPokemonCard(i, currentPokemon) { 
+    let bgrColor = currentPokemon['types'][0]['type']['name'];
+    document.getElementById(`pokemon-dialog${i}`).classList.add(bgrColor);
+}
+
+
+
+

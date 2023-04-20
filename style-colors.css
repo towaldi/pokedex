@@ -4,6 +4,7 @@
 :root {
     /* Basic */
     --color-white: rgba(255, 255, 255, 1);
+    --color-black: rgba(0, 0, 0, 1);
     /* Background */
     --color-grey-1: rgba(0, 0, 0, 0.08);
     --color-grey-2: rgba(0, 0, 0, 0.18);

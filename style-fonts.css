@@ -1,7 +1,7 @@
 /* ==========================================================================
    Fonts
    ========================================================================== */
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, li {
     font-family: 'Roboto';
     font-style: normal;
 }
@@ -16,6 +16,12 @@ p {
     font-size: 14px;
     font-weight: 400;
     color: var(--color-text-white-3);
+}
+
+li {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-grey-3)
 }
 
 /* Implementation
