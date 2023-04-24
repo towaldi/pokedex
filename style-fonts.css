@@ -1,27 +1,39 @@
 /* ==========================================================================
    Fonts
    ========================================================================== */
-h1, h2, h3, h4, h5, h6, p, li {
+h1, h2, h3, h4, h5, h6, p, li, .td-primary, .td-secondary {
     font-family: 'Roboto';
     font-style: normal;
 }
 
 h5 {
-    font-size: 16px;
+    font-size: 20px !important;
     font-weight: 700;
-    color: var(--color-text-white-3);
+    color: var(--color-text-white-3) !important;
 }
 
 p {
-    font-size: 14px;
+    font-size: 14px !important;
     font-weight: 400;
     color: var(--color-text-white-3);
 }
 
 li {
-    font-size: 14px;
+    font-size: 14px !important;
     font-weight: 500;
-    color: var(--color-text-grey-3)
+    color: var(--color-text-grey-3);
+}
+
+.td-primary {
+    font-size: 14px !important;
+    font-weight: 500;
+    color: var(--color-text-grey-3);
+}
+
+.td-secondary {
+    font-size: 14px !important;
+    font-weight: 500;
+    color: var(--color-text-grey-2);
 }
 
 /* Implementation

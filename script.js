@@ -1,7 +1,7 @@
 // Global variables
 let allPokemons = []    // Array for API load
 let startCounterLoading = 1;        // Start counter at 1
-let endCounterLoading = 21;         // Stop Counter at 10
+let endCounterLoading = 51;         // Stop Counter at 10
 
 // Load all pokemons form PokeAPI
 async function loadPokemons() {
@@ -61,6 +61,7 @@ function openDialogPokemonCard(i) {
 
     renderBgrColorDialogPokemonCard(i, currentPokemon);     // Runs `renderBgrColorDialogPokemonCard(i, currentPokemon);`
     renderDialogPokemonTypes(i, currentPokemon);     // Runs `renderDialogPokemonTypes(i, currentPokemon);`
+    renderAboutDialogPokemonCard(i);     // Runs `renderAboutDialogPokemonCard(i);`
 }
 
 
@@ -76,12 +77,50 @@ function renderDialogPokemonTypes(i, currentPokemon) {
     }
 }
 
+
 // Render background color of dialog pokemon card
 function renderBgrColorDialogPokemonCard(i, currentPokemon) { 
     let bgrColor = currentPokemon['types'][0]['type']['name'];
     document.getElementById(`pokemon-dialog${i}`).classList.add(bgrColor);
 }
 
+
+// Render about of dialog pokemon card
+function renderAboutDialogPokemonCard(i) {
+    document.getElementById('nav-item-1').classList.add('active');      // Add class `active` to `nav-item-1`
+    document.getElementById('nav-item-2').classList.remove('active');   // Removes class `active` from `nav-item-2`
+
+    let details = document.getElementById('detailed-info');      // Select `detailed-info` to render all detailed information (about)
+    details.innerHTML = '';     // Clear/delete container 
+    let currentPokemon = allPokemons[i];    // `allPokemons` at position `i` in array is assigned to the variable `currentPokemon`
+    details.innerHTML += templateDialogAbout(currentPokemon);      // Runs `templateDialogAbout()` function
+    renderAbilities(currentPokemon);    // Runs `renderAbilities()` function
+}
+
+
+// Render abilities of dialog pokemon card 
+function renderAbilities(currentPokemon) {
+    let abilities = document.getElementById('poke-abilities');      // Select `poke-abilities` to render all detailed abilities
+    abilities.innerHTML = '';   // Clear/delete container
+    for (let i = 0; i < currentPokemon['abilities'].length; i++) {      // Iteration through the array `currentPokemon`
+        const ability = currentPokemon['abilities'][i]['ability']['name'];
+
+        abilities.innerHTML +=  /*html*/    `<div class="td-secondary">${ability}</div>`;
+    }
+    
+}
+
+
+// Render stats of dialog pokemon card
+function renderStatsDialogPokemonCard(i) {
+    document.getElementById('nav-item-1').classList.remove('active');   // Removes class `active` to `nav-item-1`
+    document.getElementById('nav-item-2').classList.add('active');      // Add class `active` to `nav-item-2`
+
+    let details = document.getElementById('detailed-info');     // Select `detailed-info` to render all detailed information (stats)
+    details.innerHTML = '';     // Clear/delete container
+    let currentPokemon = allPokemons[i];    // `allPokemons` at position `i` in array is assigned to the variable `currentPokemon`
+    details.innerHTML += templateDialogStats(currentPokemon);
+}
 
 
 

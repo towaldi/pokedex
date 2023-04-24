@@ -2,8 +2,8 @@
    Reset all
    ========================================================================== */
 * {
-    box-sizing: border-box;
-    margin: 0;
+    box-sizing: border-box !important;
+    margin: 0 !important;
     padding: 0;
 }
 
@@ -56,10 +56,10 @@ body {
 
 .p-c-type-chip {
     /* Display & box model */
-    padding: 8px 12px;
+    padding: 4px 12px;
     /* Other */
     background-color: var(--color-white-1);
-    border-radius: 16px;
+    border-radius: 24px;
 }
 
 .p-c-image {
@@ -89,7 +89,7 @@ body {
 
 .dialog-pokemon-card {
     /* Display & box model */
-    height: 640px;
+    height: 600px;
     width: 360px;
     /* Other */
     background-color: var(--color-white);
@@ -114,6 +114,25 @@ body {
     width: 200px;
 }
 
+.detailed-info {
+    /* Display & box model */
+    margin: 16px 0 !important;
+}
+
+.td-primary {
+    /* Display & box model */
+    width: 84px;
+    padding-bottom: 12px;
+}
+
+.td-secondary {
+    /* Display & box model */
+    padding-bottom: 12px;
+}
+
+.poke-abilities {
+    display: flex;
+}
 
 /* ==========================================================================
    Layout
@@ -181,6 +200,14 @@ body {
     gap: 8px;
 }
 
+.row-gap-4px {
+    /* Display & box model */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4px;
+}
+
 .nav {
     /* Display & box model */
     display: flex;
@@ -225,9 +252,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px 16px;
+    padding: 4px 16px !important;
     /* Other */
-    border-radius: 16px;
+    border-radius: 24px;
     cursor: pointer;
     transition: 0.1s all ease-in-out;
 }

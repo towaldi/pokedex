@@ -53,11 +53,118 @@ function templateDialogPokemonCard(i, currentPokemon) {
                                 </div>
                                 <!-- Tabs -->
                                 <ul class="nav">
-                                    <li class="nav-item active">About</li>
-                                    <li class="nav-item">Stats</li>
+                                    <li onclick="renderAboutDialogPokemonCard(${i})" id="nav-item-1" class="nav-item">About</li>
+                                    <li onclick="renderStatsDialogPokemonCard(${i})" id="nav-item-2" class="nav-item">Stats</li>
                                 </ul>
                                 <!-- Additional info -->
-                                <div class="detailed-info"></div>
+                                <div id="detailed-info" class="detailed-info"></div>
                             </div>
                         </div>`;
+}
+
+
+// Render detailed info -> about
+function templateDialogAbout(currentPokemon) {
+    let height = currentPokemon['height'];      // Height of pokemon is assigned to the variable `height`  
+    height = height / 10;       // Value devided by 10 -> meter
+    height = height.toString().replace('.', ',');   // Convert to sting + replace `.` with `,`
+
+    let weight = currentPokemon['weight'];      // Weight of pokemon is assigned to the variable `weight`
+    weight = weight / 10;       // Value devided by 10 -> kilogram
+    weight = weight.toString().replace('.', ',');       // Convert to sting + replace `.` with `,`
+
+    return /*html*/ `   <table>
+                            <tr class>
+                                <td class="td-primary">Height</td>
+                                <td class="td-secondary">${height} m</td>
+                            </tr>
+                            <tr class>
+                                <td class="td-primary">Weight</td>
+                                <td class="td-secondary">${weight} kg</td>
+                            </tr>
+                            <tr class>
+                                <td class="td-primary">Abilities</td>
+                                <td id="poke-abilities" class="row-gap-4px"></td>
+                            </tr>
+                        </table>`;
+}
+
+
+// Render detailed info -> stats
+function templateDialogStats(currentPokemon) {
+    let hp = currentPokemon['stats'][0]['base_stat'];
+    // hp = hp / 150 * 100;
+    let attack = currentPokemon['stats'][1]['base_stat'];
+    // attack = attack / 150 * 100;
+    let specialAttack = currentPokemon['stats'][3]['base_stat'];
+    // specialAttack = specialAttack / 150 * 100;
+    let defense = currentPokemon['stats'][2]['base_stat'];
+    // defense = defense / 150 * 100;
+    let specialDefense = currentPokemon['stats'][4]['base_stat'];
+    // specialDefense = specialDefense / 150 * 100;
+    let speed = currentPokemon['stats'][5]['base_stat'];
+    // speed = speed / 150 * 100;
+
+    return /*html*/ `   <table>
+                            <!-- Table row -->
+                            <tr>
+                                <td class="td-primary">HP</td>
+                                <!-- bootstrap progress bar -->
+                                <td>
+                                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: ${hp / 150 * 100}%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Table row -->
+                            <tr>
+                                <td class="td-primary">Attack</td>
+                                <!-- bootstrap progress bar -->
+                                <td>
+                                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: ${attack / 150 * 100}%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Table row -->
+                            <tr>
+                                <td class="td-primary">Sp. Attack</td>
+                                <!-- bootstrap progress bar -->
+                                <td>
+                                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: ${specialAttack / 150 * 100}%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Table row -->
+                            <tr>
+                                <td class="td-primary">Defense</td>
+                                <!-- bootstrap progress bar -->
+                                <td>
+                                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: ${defense / 150 * 100}%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Table row -->
+                            <tr>
+                                <td class="td-primary">Sp. Defense</td>
+                                <!-- bootstrap progress bar -->
+                                <td>
+                                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: ${specialDefense / 150 * 100}%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Table row -->
+                            <tr>
+                                <td class="td-primary">Speed</td>
+                                <!-- bootstrap progress bar -->
+                                <td>
+                                    <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" style="width: ${speed / 150 * 100}%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>`;
 }
