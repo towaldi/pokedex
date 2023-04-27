@@ -120,7 +120,14 @@ function renderStatsDialogPokemonCard(i) {
     details.innerHTML = '';     // Clear/delete container
     let currentPokemon = allPokemons[i];    // `allPokemons` at position `i` in array is assigned to the variable `currentPokemon`
     details.innerHTML += templateDialogStats(currentPokemon);
+
+    // renderBgrColorDialogPokemonCard(i, currentPokemon);     // Runs `renderBgrColorDialogPokemonCard(i, currentPokemon);`
 }
 
 
+
+// Close dialog pokemon card
+function closeDialogPokemonCard() {
+    document.getElementById('dialog-card-container').classList.add('d-none');
+}
 

@@ -14,11 +14,11 @@ function templateRenderPokemonCard(i, currentPokemon) {
     let pokeImg = currentPokemon[i]['sprites']['other']['official-artwork']['front_default'];   // Image of pokeomon is assigned to the variable `pokeImg`
     return /*html*/ `   <div onclick="openDialogPokemonCard(${i})" id="pokemon-${i}" class="pokemon-card column-space-between">
                             <div class="row-space-between">
-                                <h5>${pokeName}</h5>
+                                <h5 class="text-capitalize">${pokeName}</h5>
                                 <p>#${pokeId.toString().padStart(3, '0')}</p>
                             </div>
                             <div class="row-space-between-bottom">
-                                <div id="pokemon-types-${i}" class="column-gap-8px"></div>
+                                <div id="pokemon-types-${i}" class="column-gap-8px text-capitalize"></div>
                                 <img class="p-c-image" src="${pokeImg}" alt="pokemon img">
                             </div>
                         </div>`;
@@ -32,14 +32,14 @@ function templateDialogPokemonCard(i, currentPokemon) {
     let pokeImg = currentPokemon['sprites']['other']['official-artwork']['front_default'];   // Image of pokeomon is assigned to the variable `pokeImg`
 
     return /*html*/ `   <div class="dialog-pokemon-card">
-                            <div id="pokemon-dialog${i}" class="d-p-c-basic column-center-gap-8px">
+                            <div id="pokemon-dialog${i}" class="d-p-c-basic column-center-gap-8px text-capitalize">
                                 <!-- Name + id-->
                                 <div class="row-space-between">
                                     <div class="column-space-between">
-                                        <h5>${pokeName}</h5>
+                                        <h5 class="text-capitalize">${pokeName}</h5>
                                         <p>#${pokeId.toString().padStart(3, '0')}</p>
                                     </div>
-                                    <img class="icon-button" src="./img/close_24px_white.svg" alt="close">
+                                    <img onclick="closeDialogPokemonCard()" class="icon-button" src="./img/close_24px_white.svg" alt="close">
                                 </div>
                                 <!-- Types -->
                                 <div class="row-space-between">
@@ -92,18 +92,24 @@ function templateDialogAbout(currentPokemon) {
 
 // Render detailed info -> stats
 function templateDialogStats(currentPokemon) {
+    // HP
     let hp = currentPokemon['stats'][0]['base_stat'];
-    // hp = hp / 150 * 100;
+    hp = Math.round(hp / 150 * 100);
+    // Attack
     let attack = currentPokemon['stats'][1]['base_stat'];
-    // attack = attack / 150 * 100;
+    attack = Math.round(attack / 150 * 100);
+    // Special attack
     let specialAttack = currentPokemon['stats'][3]['base_stat'];
-    // specialAttack = specialAttack / 150 * 100;
+    specialAttack = Math.round(specialAttack / 150 * 100);
+    // Defense
     let defense = currentPokemon['stats'][2]['base_stat'];
-    // defense = defense / 150 * 100;
+    defense = Math.round(defense / 150 * 100);
+    // Special defense
     let specialDefense = currentPokemon['stats'][4]['base_stat'];
-    // specialDefense = specialDefense / 150 * 100;
+    specialDefense = Math.round(specialDefense / 150 * 100);
+    // Speed
     let speed = currentPokemon['stats'][5]['base_stat'];
-    // speed = speed / 150 * 100;
+    speed = Math.round(speed / 150 * 100);
 
     return /*html*/ `   <table>
                             <!-- Table row -->
@@ -112,7 +118,7 @@ function templateDialogStats(currentPokemon) {
                                 <!-- bootstrap progress bar -->
                                 <td>
                                     <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: ${hp / 150 * 100}%"></div>
+                                        <div class="progress-bar" style="width: ${hp}%">${hp}%</div>
                                     </div>
                                 </td>
                             </tr>
@@ -122,7 +128,7 @@ function templateDialogStats(currentPokemon) {
                                 <!-- bootstrap progress bar -->
                                 <td>
                                     <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: ${attack / 150 * 100}%"></div>
+                                        <div class="progress-bar" style="width: ${attack}%">${attack}%</div>
                                     </div>
                                 </td>
                             </tr>
@@ -132,7 +138,7 @@ function templateDialogStats(currentPokemon) {
                                 <!-- bootstrap progress bar -->
                                 <td>
                                     <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: ${specialAttack / 150 * 100}%"></div>
+                                        <div class="progress-bar" style="width: ${specialAttack}%">${specialAttack}%</div>
                                     </div>
                                 </td>
                             </tr>
@@ -142,7 +148,7 @@ function templateDialogStats(currentPokemon) {
                                 <!-- bootstrap progress bar -->
                                 <td>
                                     <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: ${defense / 150 * 100}%"></div>
+                                        <div class="progress-bar" style="width: ${defense}%">${defense}%</div>
                                     </div>
                                 </td>
                             </tr>
@@ -152,7 +158,7 @@ function templateDialogStats(currentPokemon) {
                                 <!-- bootstrap progress bar -->
                                 <td>
                                     <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: ${specialDefense / 150 * 100}%"></div>
+                                        <div class="progress-bar" style="width: ${specialDefense}%">${specialDefense}%</div>
                                     </div>
                                 </td>
                             </tr>
@@ -162,7 +168,7 @@ function templateDialogStats(currentPokemon) {
                                 <!-- bootstrap progress bar -->
                                 <td>
                                     <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar" style="width: ${speed / 150 * 100}%"></div>
+                                        <div class="progress-bar" style="width: ${speed}%">${speed}%</div>
                                     </div>
                                 </td>
                             </tr>

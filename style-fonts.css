@@ -36,6 +36,10 @@ li {
     color: var(--color-text-grey-2);
 }
 
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
 /* Implementation
    ========================================================================== */
 /* Bold */

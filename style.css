@@ -119,21 +119,45 @@ body {
     margin: 16px 0 !important;
 }
 
-.td-primary {
+tbody {
     /* Display & box model */
-    width: 84px;
-    padding-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.td-secondary {
+tr {
     /* Display & box model */
-    padding-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.td-primary {
+    /* Display & box model */
+    width: 86px;
 }
 
 .poke-abilities {
     display: flex;
 }
 
+.progress {
+    /* Display & box model */
+    width: 238px;
+    height: 24px !important;
+    /* Other */
+    border-radius: 12px !important;
+}
+
+.progress-bar {
+    /* Display & box model */
+    text-align: left !important;
+    padding-left: 12px !important;
+    /* Other */
+    background-color: rgb(83, 150, 221) !important;
+
+}
 /* ==========================================================================
    Layout
    ========================================================================== */
