@@ -130,12 +130,18 @@ tr {
     /* Display & box model */
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
 }
 
 .td-primary {
     /* Display & box model */
     width: 86px;
+}
+
+.td-secondary {
+    /* Display & boy model */
+    flex-wrap: wrap;
 }
 
 .poke-abilities {

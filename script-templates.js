@@ -31,7 +31,7 @@ function templateDialogPokemonCard(i, currentPokemon) {
     let pokeId = currentPokemon['id'];       // Id of pokeomon is assigned to the variable `pokeId` (id gets converted into a string + added 0s to fill a total length of 3 (added as additional variable or inside the html code) -> let pokeIdAsString = pokeId.toString().padStart(3, '0');)
     let pokeImg = currentPokemon['sprites']['other']['official-artwork']['front_default'];   // Image of pokeomon is assigned to the variable `pokeImg`
 
-    return /*html*/ `   <div class="dialog-pokemon-card">
+    return /*html*/ `   <div onclick="closeDialogPokemonCardBgr(event)" class="dialog-pokemon-card">
                             <div id="pokemon-dialog${i}" class="d-p-c-basic column-center-gap-8px text-capitalize">
                                 <!-- Name + id-->
                                 <div class="row-space-between">
@@ -47,9 +47,9 @@ function templateDialogPokemonCard(i, currentPokemon) {
                                 </div>
                                 <!-- Nav arrows + img -->
                                 <div class="row-space-between">
-                                    <img class="icon-button" src="./img/arrow_back_24px_white.svg" alt="arrow back">
+                                    <img onclick="previousPokemon(${i})" class="icon-button" src="./img/arrow_back_24px_white.svg" alt="arrow back">
                                     <img class="d-p-c-image" src="${pokeImg}" alt="pokemon img">
-                                    <img class="icon-button" src="./img/arrow_forward_24px_white.svg" alt="arrow forward">
+                                    <img onclick="followingPokemon(${i})" class="icon-button" src="./img/arrow_forward_24px_white.svg" alt="arrow forward">
                                 </div>
                                 <!-- Tabs -->
                                 <ul class="nav">

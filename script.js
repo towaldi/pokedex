@@ -126,8 +126,30 @@ function renderStatsDialogPokemonCard(i) {
 
 
 
-// Close dialog pokemon card
+// Close dialog pokemon card - close icon
 function closeDialogPokemonCard() {
     document.getElementById('dialog-card-container').classList.add('d-none');
+    document.getElementById('dialog-card-container').innerHTML='';
 }
 
+
+// Close dialog pokemon card - background 
+function closeDialogPokemonCardBgr(event) {
+    event.stopPropagation();
+}
+
+
+// Open previous dialog pokemon card
+function previousPokemon(i) {
+    document.getElementById('dialog-card-container').innerHTML = '';
+    i--;
+    openDialogPokemonCard(i);
+}
+
+
+// Open following dialog pokemon card 
+function followingPokemon(i) {
+    document.getElementById('dialog-card-container').innerHTML = '';
+    i++;
+    openDialogPokemonCard(i);
+}
