@@ -84,7 +84,7 @@ function templateDialogAbout(currentPokemon) {
                             </tr>
                             <tr class>
                                 <td class="td-primary">Abilities</td>
-                                <td id="poke-abilities" class="row-gap-4px"></td>
+                                <td id="poke-abilities" class="row-gap-8px-flex-wrap"></td>
                             </tr>
                         </table>`;
 }
