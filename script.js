@@ -1,7 +1,9 @@
 // Global variables
 let allPokemons = [];   // Array for API load
 let startCounterLoading = 1;        // Start counter at 1
-let endCounterLoading = 51;         // Stop Counter at 10
+let endCounterLoading = 11;         // Stop Counter at 10
+
+let filteredPokemons = [];  // Array for filtered/searched pokemons
 
 
 // Load all pokemons form PokeAPI

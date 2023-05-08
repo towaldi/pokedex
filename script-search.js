@@ -6,12 +6,13 @@ function searchPokemon() {
     pokemonCards.innerHTML = '';    // Clear/delete all
 
     for (let i = 0; i < allPokemons.length; i++) {
-        let searchedPokemon = allPokemons[i];
+        let searchedPokemon = allPokemons[i]['name'];
         if (searchedPokemon.toLowerCase().includes(searchInput)) {
-            currentPokemon = allPokemons[i];
-            renderPokemons(currentPokemon);
+            let selectedPokemon = allPokemons[i];
+            filteredPokemons.push(selectedPokemon);
         }
     }
+    renderPokemons(filteredPokemons);
 }
 
 
