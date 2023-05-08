@@ -1,7 +1,8 @@
 // Global variables
-let allPokemons = []    // Array for API load
+let allPokemons = [];   // Array for API load
 let startCounterLoading = 1;        // Start counter at 1
 let endCounterLoading = 51;         // Stop Counter at 10
+
 
 // Load all pokemons form PokeAPI
 async function loadPokemons() {

@@ -25,8 +25,8 @@
         <div class="h-search">
             <!-- Input field-->
             <div class="input-group">
-                <input id="search-input" type="text" class="searchfield" placeholder="Search..." aria-label="Search">
-                <button id="search-button" type="button" class="btn btn-dark">Search</button>
+                <input onkeydown="searchPokemon()" id="search-input" type="text" class="searchfield" placeholder="Search..." aria-label="Search">
+                <button onclick="resetSearch()" id="reset-button" type="button" class="btn btn-dark">Reset</button>
              </div>
         </div>
     </div>

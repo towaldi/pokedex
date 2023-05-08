@@ -34,6 +34,7 @@ li {
     font-size: 14px !important;
     font-weight: 500;
     color: var(--color-text-grey-2);
+    text-transform: lowercase !important;
 }
 
 .text-capitalize {

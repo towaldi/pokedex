@@ -1,15 +1,25 @@
-// Runs search by click on 'search' button
-let searchInput = document.getElementById('search-input');     // Get input from input field
-searchInput.addEventListener('keypress', function (event) {     // Adds an `Event-Listener` (event kind + function)
-    if (event.key === 'Enter') {    // Checks if user is pressing 'Enter'
-        event.preventDefault();     // Blocks the standard browser behavior ('Enter' = restart webpage)
-        document.getElementById('search-button').click();   // Runs 'click()' function (simulates click on button)
-    }
-});
-
-
-//
+// Search for pokemon
 function searchPokemon() {
-    let search = document.getElementById('search-input').value;
-    search = search.toLowerCase();
+    let searchInput = document.getElementById('search-input').value;
+    searchInput = searchInput.toLowerCase();
+    let pokemonCards = document.getElementById('cards-container');      // Select `cards-container` to render all cards
+    pokemonCards.innerHTML = '';    // Clear/delete all
+
+    for (let i = 0; i < allPokemons.length; i++) {
+        let searchedPokemon = allPokemons[i];
+        if (searchedPokemon.toLowerCase().includes(searchInput)) {
+            currentPokemon = allPokemons[i];
+            renderPokemons(currentPokemon);
+        }
+    }
+}
+
+
+// Reset search 
+function resetSearch() {
+    let searchInput = document.getElementById('search-input');
+    if (searchInput.value != '') {
+        searchInput.value = '';
+        searchPokemon();
+    }
 }
