@@ -4,6 +4,7 @@ function searchPokemon() {
     searchInput = searchInput.toLowerCase();
     let pokemonCards = document.getElementById('cards-container');      // Select `cards-container` to render all cards
     pokemonCards.innerHTML = '';    // Clear/delete all
+    filteredPokemons = [];      // Clear array
 
     for (let i = 0; i < allPokemons.length; i++) {
         let searchedPokemon = allPokemons[i]['name'];
