@@ -1,7 +1,7 @@
 // Global variables
 let allPokemons = [];   // Array for API load
 let startCounterLoading = 1;        // Start counter at 1
-let endCounterLoading = 11;         // Stop Counter at 10
+let endCounterLoading = 21;         // Stop Counter at 10
 
 let filteredPokemons = [];  // Array for filtered/searched pokemons
 
@@ -54,11 +54,12 @@ function renderBgrColor(i, currentPokemon) {
     document.getElementById(`pokemon-${i}`).classList.add(bgrColor);    // .classList adds the corresponding background color to the pokemon
 }
 
-
+  
 // Open dialog pokemon card 
 function openDialogPokemonCard(i) {
     let dialogCard = document.getElementById('dialog-card-container');
     dialogCard.classList.remove('d-none');    // Removes css class .d-none form element
+    
     let currentPokemon = allPokemons[i];
     dialogCard.innerHTML += templateDialogPokemonCard(i, currentPokemon);   // Runs `templateDialogPokemonCard()`
 
