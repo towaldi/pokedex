@@ -92,3 +92,8 @@
 .water {
     background-color: rgb(83, 150, 221);
 }
+
+
+.bgr-grey {
+    background-color: var(--color-grey-2);
+}

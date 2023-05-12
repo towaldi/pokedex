@@ -62,7 +62,7 @@ body {
     /* Display & box model */
     display: flex;
     justify-content: center;
-    padding: 24px 16px 48px 16px;
+    padding: 24px 16px;
     gap: 16px;
     flex-wrap: wrap;
 }
@@ -270,6 +270,13 @@ tr {
     gap: 16px;
 }
 
+.align-center {
+    /* Display & box model */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 16px;
+}
 
 /* ==========================================================================
    Effects

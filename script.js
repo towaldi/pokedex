@@ -18,6 +18,14 @@ async function loadPokemons() {
 }
 
 
+// Load 20 more pokemon from PokeAPI
+function loadMorePokemons() {
+    startCounterLoading = endCounterLoading    // Starts at e.g. 21
+    endCounterLoading = endCounterLoading + 20;     // Increase counter by 20
+    loadPokemons();     // Run 'loadPokemons'
+}
+
+
 // Render pokemon cards
 function renderPokemons(currentPokemon) {
     let pokemonCards = document.getElementById('cards-container');      // Select `cards-container` to render all cards
