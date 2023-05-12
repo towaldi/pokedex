@@ -8,12 +8,14 @@ function searchPokemon() {
 
     for (let i = 0; i < allPokemons.length; i++) {
         let searchedPokemon = allPokemons[i]['name'];
-        if (searchedPokemon.toLowerCase().includes(searchInput)) {
-            let selectedPokemon = allPokemons[i];
-            filteredPokemons.push(selectedPokemon);
+        if (searchedPokemon.toLowerCase().includes(searchInput)) {      //
+            let selectedPokemon = allPokemons[i];      
+            filteredPokemons.push(selectedPokemon);     // Pushes filtered pokemons into 'filteredPokemons' array
         }
     }
     renderPokemons(filteredPokemons);
+    document.getElementById('load-more-btn').classList.add('d-none');   // Hides load button
+    document.getElementById('footer').classList.add('position-absolute-bottom');    // Adds position-absolute-bottom
 }
 
 
@@ -24,4 +26,6 @@ function resetSearch() {
         searchInput.value = '';
         searchPokemon();
     }
+    document.getElementById('load-more-btn').classList.remove('d-none');   // Shows load button
+    document.getElementById('footer').classList.remove('position-absolute-bottom');    // Removes position-absolute-bottom
 }
